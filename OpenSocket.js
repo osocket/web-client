@@ -20,7 +20,7 @@ class OpenSocket {
 
   connect(){
     if(this.dependency==false){
-      this.loadScript('socket.io.min.js',()=>{
+      this.loadScript(window.location.href.replace('OpenSocket.js','socket.io.min.js'),()=>{
         this._connect()
         this.dependency = true;
       })
