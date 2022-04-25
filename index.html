@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="OpenSocket.js" charset="utf-8"></script>
+</head>
+<body>
+
+  <script type="text/javascript">
+    const config = {
+
+      developer_id : '...',
+      project_id:'...',
+      client_token:'....',
+
+
+      onConnect:onConnect,
+      onReceive:onReceive,
+      onRegister:onRegister,
+      onDisconnect:onDisconnect,
+    }
+
+    var osocket = new OpenSocket(config);
+
+
+    /*
+    * Connect to server
+    */
+    osocket.connect();
+
+    function onConnect(){
+      console.log('onConnect');
+    }
+
+    function onReceive(msg){
+      console.log('onReceive',msg);
+    }
+
+    function onRegister(result){
+      console.log('onRegister',result);
+    }
+
+    function onDisconnect(){
+      console.log('onDisconnect');
+    }
+  </script>
+
+</body>
+</html>
