@@ -4,6 +4,10 @@
 ```html
 <script src="OpenSocket.js" charset="utf-8"></script>
 ```
+#### or by cdn
+```html
+<script src="https://unpkg.com/osocket-web@1.0.3/OpenSocket.js" charset="utf-8"></script>
+```
 
 ### Usage
 ```JS
