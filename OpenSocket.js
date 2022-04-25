@@ -1,4 +1,3 @@
-
 class OpenSocket {
 
   constructor(options) {
@@ -19,10 +18,9 @@ class OpenSocket {
   }
 
   connect(){
-    if(this.dependency==false){
-      this.loadScript(window.location.href.replace('OpenSocket.js','socket.io.min.js'),()=>{
+    if(typeof io === 'undefined'){
+      this.loadScript('https://unpkg.com/socket.io-client@4.5.0/dist/socket.io.min.js',()=>{
         this._connect()
-        this.dependency = true;
       })
     }
     else{
